@@ -6,19 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const cvBtn = document.getElementById('cv-btn');
     if (cvBtn) {
         cvBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('My CV is currently being updated! Please check back soon or contact me directly.');
+            cvBtn.href = "Apil_Gaire_CV.pdf";
+            cvBtn.download = "Apil_Gaire_CV.pdf";
+            cvBtn.target = "_blank";
+
+            // e.preventDefault();
+            // alert('My CV is currently being updated! Please check back soon or contact me directly.');
         });
     }
 
     // Typewriter effect for header
     const typeWriterElement = document.querySelector('.typewriter-text');
     if (typeWriterElement) {
-        const texts = ["Computer Engineering Student", "Jr-Developer", "Learner"];
+        const texts = ["Computer-Engineering Student", "Developer", "Learner"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-
         // Ensure the cursor blinks continuously
         const cursorStyle = document.createElement('style');
         cursorStyle.innerHTML = `
