@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apil Gaire | Computer Engineering Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">AG<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content glass-panel fade-in">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1 class="glitch" data-text="Apil Gaire">Apil Gaire</h1>
+                    <h2 class="typewriter-text">Computer Engineering Student <span>|</span></h2>
+                    <p class="bio">2nd-year Bachelor's student passionate about building elegant software, exploring new
+                        technologies, and solving complex problems.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn primary-btn">View My Work</a>
+                        <!-- CV link placeholder -->
+                        <a href="#" class="btn secondary-btn" id="cv-btn"><i class="fas fa-download"></i> Download
+                            CV</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <img src="assets/profile-avatar.png" alt="Apil Gaire" class="profile-img">
+                    <div class="glow-ring"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section slide-up">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content glass-panel">
+                <div class="about-text">
+                    <p>I am currently exploring the vast world of computer science through my Computer Engineering
+                        degree. My focus is on understanding core principles while applying them to modern development
+                        practices.</p>
+                    <p>When I'm not studying, I enjoy working on personal projects, learning new frameworks, and
+                        participating in hackathons.</p>
+                </div>
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Bachelor in Computer Engineering</h3>
+                            <p class="timeline-date">Current - 2nd Year</p>
+                            <p>Focusing on algorithms, data structures, and computer architecture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>High School</h3>
+                            <p class="timeline-date">2022-2024</p>
+                            <p>Science and Mathematics focus.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Secondary School</h3>
+                            <p class="timeline-date">2009-2022</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section slide-up">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-panel">
+                    <i class="fab fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <i class="fab fa-js skill-icon"></i>
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3>C / C++</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <i class="fab fa-react skill-icon"></i>
+                    <h3>Web Technologies</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section slide-up">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-panel">
+                    <div class="project-info">
+                        <h3>HealthscopeAI</h3>
+                        <p>A AI tool for your everyday health related queries and also a platform for users to analyze
+                            the symptoms of diseases and get the best possible treatment.</p>
+                        <div class="tech-stack">
+                            <span>API</span>
+                            <span>React</span>
+                        </div>
+                        <a href="https://healthscopeai-eight.vercel.app/" class="project-link">View Details <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="project-card glass-panel">
+                    <div class="project-info">
+                        <h3></h3>
+                        <p>Another impressive project showcasing your growing abilities as an engineer.</p>
+                        <div class="tech-stack">
+                            <span>C++</span>
+                            <span>Algorithms</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section slide-up">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content glass-panel">
+                <p>Always open to discussing tech, opportunities, or just having a chat!</p>
+                <div class="social-links">
+                    <a href="https://github.com/ApilGaire" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/apil-gaire-0260863b1/" class="social-icon"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Apil Gaire. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
