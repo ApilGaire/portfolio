@@ -41,7 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Vanta.js Network Background
     let vantaEffect = null;
-    if (typeof VANTA !== 'undefined') {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Skip heavy 3D rendering on mobile and low-end devices
+    if (typeof VANTA !== 'undefined' && !isMobile && !prefersReducedMotion) {
         vantaEffect = VANTA.NET({
             el: "#vanta-bg",
             mouseControls: true,
@@ -54,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
             color: 0x8b5cf6, // Default to dark theme muted violet
             backgroundColor: 0x000000, 
             backgroundAlpha: 0.0, // Make it transparent so CSS gradient works
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 18.00
+            points: 5.00,
+            maxDistance: 15.00,
+            spacing: 25.00
         });
     }
 
@@ -198,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.querySelector('.glass-nav');
-    const vantaContainer = document.getElementById('vanta-bg');
 
     window.addEventListener('scroll', () => {
         // Navbar styling on scroll
@@ -208,11 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.style.background = 'var(--nav-bg)';
             navbar.style.boxShadow = 'none';
-        }
-
-        // Apply smooth parallax effect to the Vanta network (slower background tracking)
-        if (vantaContainer) {
-            vantaContainer.style.transform = `translateY(${window.scrollY * -0.15}px)`;
         }
     });
 
