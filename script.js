@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cvBtn.href = "Apil_Gaire_CV.pdf";
             cvBtn.download = "Apil_Gaire_CV.pdf";
             cvBtn.target = "_blank";
-
             // e.preventDefault();
             // alert('My CV is currently being updated! Please check back soon or contact me directly.');
         });
