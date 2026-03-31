@@ -1,3 +1,23 @@
+// Force page to always load at the top
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Remove hash from URL if present without reloading to prevent auto-jumping
+if (window.location.hash) {
+    history.replaceState('', document.title, window.location.pathname + window.location.search);
+}
+
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -12,6 +32,60 @@ document.addEventListener('DOMContentLoaded', () => {
             // e.preventDefault();
             // alert('My CV is currently being updated! Please check back soon or contact me directly.');
         });
+    }
+
+    // Theme Switcher Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.documentElement; // using documentElement to set class/attribute
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    // Initialize Vanta.js Network Background
+    let vantaEffect = null;
+    if (typeof VANTA !== 'undefined') {
+        vantaEffect = VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x8b5cf6, // Default to dark theme muted violet
+            backgroundColor: 0x000000, 
+            backgroundAlpha: 0.0, // Make it transparent so CSS gradient works
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+    }
+
+    if (themeToggle && icon) {
+        // Retrieve saved theme or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'light') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                if (vantaEffect) vantaEffect.setOptions({ color: 0x4f46e5 }); // Calm blue
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                if (vantaEffect) vantaEffect.setOptions({ color: 0x8b5cf6 }); // Muted violet
+            }
+        }
     }
 
     // Typewriter effect for header
@@ -124,13 +198,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.querySelector('.glass-nav');
+    const vantaContainer = document.getElementById('vanta-bg');
+
     window.addEventListener('scroll', () => {
+        // Navbar styling on scroll
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(5, 5, 5, 0.9)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            navbar.style.background = 'var(--nav-bg-scrolled)';
+            navbar.style.boxShadow = 'var(--glass-shadow)';
         } else {
-            navbar.style.background = 'rgba(5, 5, 5, 0.7)';
+            navbar.style.background = 'var(--nav-bg)';
             navbar.style.boxShadow = 'none';
+        }
+
+        // Apply smooth parallax effect to the Vanta network (slower background tracking)
+        if (vantaContainer) {
+            vantaContainer.style.transform = `translateY(${window.scrollY * -0.15}px)`;
         }
     });
 

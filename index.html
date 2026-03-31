@@ -7,24 +7,26 @@
     <title>Apil Gaire | Computer Engineering Student</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="background-animation">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
+    <div id="vanta-bg"></div>
 
     <nav class="glass-nav">
         <div class="nav-content">
             <div class="logo">AG<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-switch" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -37,6 +39,38 @@
                     <h2 class="typewriter-text">Computer Engineering Student <span>|</span></h2>
                     <p class="bio">2nd-year Bachelor's student passionate about building elegant software, exploring new
                         technologies, and solving complex problems.</p>
+
+                    <div class="skills-icon-container hero-skills">
+                        <div class="skill-icon-box" data-skill="JavaScript">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                alt="JavaScript" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                alt="Python" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="React">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                alt="React" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="Node.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                                alt="Node.js" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="Firebase">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg"
+                                alt="Firebase" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="C++">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                                alt="C++" />
+                        </div>
+                        <div class="skill-icon-box" data-skill="Linux">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                                alt="Linux" />
+                        </div>
+                    </div>
+
                     <div class="cta-buttons">
                         <a href="#projects" class="btn primary-btn">View My Work</a>
                         <!-- CV link placeholder -->
@@ -66,6 +100,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h3>Bachelor in Computer Engineering</h3>
+                            <h4 class="timeline-institution">Pulchowk Campus</h4>
                             <p class="timeline-date">Current - 2nd Year</p>
                             <p>Focusing on algorithms, data structures, and computer architecture.</p>
                         </div>
@@ -74,6 +109,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h3>High School</h3>
+                            <h4 class="timeline-institution">Tilottama Campus</h4>
                             <p class="timeline-date">2022-2024</p>
                             <p>Science and Mathematics focus.</p>
                         </div>
@@ -82,7 +118,8 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h3>Secondary School</h3>
-                            <p class="timeline-date">2009-2022</p>
+                            <h4 class="timeline-institution">Deep Boarding High School</h4>
+                            <p class="timeline-date">2018-2022</p>
                             <p></p>
                         </div>
                     </div>
@@ -90,39 +127,7 @@
             </div>
         </section>
 
-        <section id="skills" class="skills-section slide-up">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-card glass-panel">
-                    <i class="fab fa-python skill-icon"></i>
-                    <h3>Python</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 50%"></div>
-                    </div>
-                </div>
-                <div class="skill-card glass-panel">
-                    <i class="fab fa-js skill-icon"></i>
-                    <h3>JavaScript</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-card glass-panel">
-                    <i class="fas fa-code skill-icon"></i>
-                    <h3>C / C++</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-card glass-panel">
-                    <i class="fab fa-react skill-icon"></i>
-                    <h3>Web Technologies</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 65%"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <section id="projects" class="projects-section slide-up">
             <h2 class="section-title">Featured Projects</h2>
@@ -136,7 +141,8 @@
                             <span>API</span>
                             <span>React</span>
                         </div>
-                        <a href="" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/ApilGaire/healthscopeai" class="project-link">View Details <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="project-card glass-panel">
@@ -173,6 +179,8 @@
         <p>&copy; <span id="year"></span> Apil Gaire. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script src="script.js"></script>
 </body>
 
