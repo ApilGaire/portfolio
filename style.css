@@ -561,6 +561,14 @@ section {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-card::before {
@@ -596,7 +604,8 @@ section {
 
 .tech-stack {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
     margin: 1.5rem 0;
 }
 
@@ -617,6 +626,7 @@ section {
     align-items: center;
     gap: 0.5rem;
     transition: color 0.3s;
+    margin-top: auto;
 }
 
 .project-link:hover {
@@ -709,6 +719,15 @@ footer {
         justify-content: center;
     }
 
+    .hero-image-container {
+        margin-bottom: 5.5rem;
+    }
+
+    .hero-skills {
+        justify-content: center;
+        margin: 0 auto 2.5rem auto;
+    }
+
     .about-content {
         flex-direction: column;
     }
@@ -743,6 +762,7 @@ footer {
     .hero-image-container {
         width: 250px;
         height: 250px;
+        margin-bottom: 5rem;
     }
 
     .contact-content {
